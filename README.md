@@ -35,7 +35,20 @@ ___
 [[Back to top](#top)]
 
 
-There are sevral diffrent attributes as to why our animals get euthanized, using this dataset from the City of Austin website we will explore the diffrent attributes and use our best model to predict weather an animals certain characteristics will lead them to be euthanized. This will not only help understand the qualifications of an animal to be put down, but find more ways to prevent euthinization. The attributes we will be exploring are the animals, age, sex, type of animal and year the animal was released.
+There are sevral diffrent attributes as to why our animals get euthanized, using this dataset from the City of Austin website we will explore the diffrent attributes and use our best model to predict weather an animals certain characteristics will lead them to be euthanized. The attributes we will be exploring are the animals, age, sex, type of animal and year the animal was released.
+
+
+## Project Goals
+
+The city of Austin is 90% "no kill" and being one of the largest no kill city in the country yet there is still a small amount of animals that are undergoing euthanization. The goal is to use machine learning models to accuratly predcict weather an animal in the animal center would lead to euthanasia. With this information we can even increcrease that 90% "no kill" and reduce the amount of animals getting euthanized therefore saving our austin animals!
+
+
+### Executive Summary
+
+Using the City of Austin public databases by downloading a csv file,and prepareing the data by removing nulls and creating dummy variables.
+Now it is time for exploration, by asking my inital questions and creating visualizations along with statistical test to find the asnwers to my questions. For all of my questions I was able to find a relationship between the variables in question to euthinization. Moving on I used only my numeric variables for Modeling, only to show that all of my classification models came up with the same output, to determine the best model I chose the easiest and least complicated model Decision Tree.
+
+
 ***
 
 
@@ -48,14 +61,14 @@ Checking the database
         
 ### Initial Questions 
 
-- what sex of animals is more likely to get euthanasia?
-- what animal type is more likely to get euthinized?
+- What sex of animals is more likely to get euthanasia?
+- What animal type is more likely to get euthinized?
 - Does the age of the animal determine the euthinization?
-- Is there some sort of relationship between animal color and Euthinization? 
-- Is there some sort of relationship between animal Breed and Euthinization? 
+- Is there some sort of relationship between animal Color and Euthinization?
+- Is there some sort of relationship between animal Breed and Euthinization?
 
 ### Target variable
- Use a Macine learning Classsification model to be able to predict the diffrent freatues of the animals coming into the center and deternmine euthanization 
+ Use a Macine learning Classsification models to be able to predict diffrent features of the animals coming into the center and deternmine euthanization 
 
 ### Need to haves (Deliverables):
 Need to have acces to jupyter notebook and all of the imoprtant libraries such as
