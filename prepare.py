@@ -17,16 +17,30 @@ def get_animal_data():
 
 
 def prep_animal_data(df):
-    df = df.rename(columns={'Date of Birth': 'DOB', 'Outcome Type':'outcome', 'Outcome Subtype':'subtype', 'Animal Type': 'animal_type', 'Sex upon Outcome': 'sex', 'Age upon Outcome': 'age'})
+    df = df.rename(columns={'Date of Birth': 'DOB', 'Outcome Type':'outcome', 'Outcome Subtype':'subtype', 'Animal Type': 'animal_type', 'Sex upon Outcome': 'sex', 'Age upon Outcome': 'age_upon_outcome'})
     df['Name'] = df.Name.fillna(value='No_name')
     df = df.drop(columns='subtype')
     df = df.dropna()
+    df = df.replace('-1 years', '1 year')
+    df = df.replace('-2 years', '2 years')
+    df = df.replace('-3 years', '3 years')
     df.DOB = pd.to_datetime(df.DOB)
-    df['year'] = df.DOB.dt.year
-    df['age'] = 2022 - df.year
-    df['age_bin'] = pd.cut(df.age, 
+    df['year_born'] = df.DOB.dt.year
+    df['current_age'] = 2022 - df.year_born
+    df['age_bin'] = pd.cut(df.current_age, 
                            bins = [0, 5, 10, 15, 20, 25, 30],
                            labels = ['below 5yrs', 'over 5yrs', 'over 10yrs', 'over 15yrs', 'over 20yrs', 'over 25yrs'])
+    
+    df.MonthYear = pd.to_datetime(df.MonthYear) 
+    df.DateTime = pd.to_datetime(df.DateTime)
+    df['year_released'] = df.DateTime.dt.year
+    df['age_out_years'] = df.year_released - df.year_born
+    df['Age_upon_out'] = df.DateTime - df.DOB
+    df['days_old'] = df.Age_upon_out.dt.days
+
+    df = df.replace(-1, 1)
+    df = df.replace(-2, 2)
+    df = df.replace(-3, 3)
 
     dummies = pd.get_dummies(df['outcome'])
     df = pd.concat([df, dummies], axis=1)
