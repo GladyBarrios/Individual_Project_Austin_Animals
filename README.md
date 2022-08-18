@@ -1,6 +1,12 @@
 
+
+![Austin Animals](https://firehouseroundrock.com/client-logo/austin-animal-center/)
+
+
+
+
 # <a name="top"></a>Individual_Project_Austin_Animals
-![]()
+
 ### Saving our Austin Animals
 by: Glady Barrios
 
