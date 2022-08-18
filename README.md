@@ -34,27 +34,42 @@ ___
 ## <a name="project_description"></a>Project Description:
 [[Back to top](#top)]
 
-***
+
+There are sevral diffrent attributes as to why our animals get euthanized, using this dataset from the City of Austin website we will explore the diffrent attributes and use our best model to predict weather an animals certain characteristics will lead them to be euthanized. The attributes we will be exploring are the animals, age, sex, type of animal and year the animal was released.***
+
+
 ## <a name="planning"></a>Project Planning: 
 [[Back to top](#top)]
 
 ### Project Outline:
-
+Checking the database 
 
         
-### Hypothesis
+### Initial Questions 
 
-
+- what sex of animals is more likely to get euthanasia?
+- what animal type is more likely to get euthinized?
+- Does the age of the animal determine the euthinization?
+- Is there some sort of relationship between animal color and Euthinization? 
+- Is there some sort of relationship between animal Breed and Euthinization? 
 
 ### Target variable
-
+ Use a Macine learning Classsification model to be able to predict the diffrent freatues of the animals coming into the center and deternmine euthanization 
 
 ### Need to haves (Deliverables):
+Need to have acces to jupyter notebook and all of the imoprtant libraries such as
+-numpy
+-pandas
+-matplotlib
+-seaborn 
+ more information in final notebook 
+ 
+Need to dowload this  csv from website [https://dev.socrata.com/foundry/data.austintexas.gov/9t4d-g238]
 
-
+Austin_Animal_Center_Outcomes.csv
 
 ### Nice to haves (With more time):
-
+ - Due to time crunch i would love to explore the variables of "breed" and "Color", since they are so many categories of the variables this would take some time to sift through 
 
 
 ***
@@ -62,7 +77,7 @@ ___
 ## <a name="findings"></a>Key Findings:
 [[Back to top](#top)]
 
-
+- A few of the biggest drivers of euthanization is age, sex, and animal_type
 
 
 ***
@@ -71,99 +86,74 @@ ___
 [[Back to top](#top)]
 
 ### Data Used
+	
+  
 ---
 | Attribute | Definition | Data Type |
 | ----- | ----- | ----- |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
-| | | |
+|MonthYear| Month and year the animal was reeased| datetime64|
+|DOB	|Date of birth of the animal| datetime64|
+|outcome  | What was the outcome of the animal leaving the center | object|
+|animal_type |What is the type of animal, dog, cat, other |object|
+|Age_upon_out | Age as the animal leaves the center|timedelta64 |
+|days_old |The age of the animals in days|int64|
 
 ***
 
 ## <a name="wrangle"></a>Data Acquisition and Preparation
 [[Back to top](#top)]
 
-![]()
+### Aquire steps:
+
+aquird the data from City of austin public databases dowloadable .csv file 
 
 
 ### Wrangle steps: 
 
+- changin the collumn name so that it would be easier to run data such as ('date of birth, to DOB)
+
+-  there are some nulls in the name collumn so i changed it to "no_name" 
+- Since the collumn "subtype" has many nuls i decided to drop the whole collumn 
+- Then some collumns still had a few nulls i ddecied to drop the nulls and still had a large enough dataset 
+- when looking at age_upon_outcome there are some years that are negative, I belive this is a mistake and I decided to replace it with a positive 
+- created a few collumns 'year_born', 'current_age','age_bin'(this will bin the age into difffrent categories),'year_released','age_out_years'(this is the age upon outcome in just years),'age_upon_out'(age upon outcome in days and time),'days_old' 
+- Created dummy varables for collumns, outcome, animal_type, sex.
 
 *********************
 
 ## <a name="explore"></a>Data Exploration:
 [[Back to top](#top)]
 - Python files used for exploration:
-    - wrangle.py 
-    - explore.py
-    - modeling.py
+    - prepare.py 
 
+### Questions and Takeaways:
 
-### Takeaways from exploration:
+Question 1- Is there a relationship between animal_type and Euthanization?
 
+- looking at the visualization looks there is a relationship with the animal_type and Euthinasia
+- The animal type category `other` has the most animals being euthinzed, the second largest animal set is cats and lastly dog
+- The statistical test also shows that there is a relationship between animal type and euthinasia
 
-***
+Question 2- What sex of animals is more likely to get euthinized?
 
-## <a name="stats"></a>Statistical Analysis
-[[Back to top](#top)]
+- concluding from the statistical test and the visualization we can see that there is a relationship between the animals sex and euthinization 
+- from the visualization and looking at the numbers we can see that intact male and femailes are more lilky to get euthinized than a nutered male or female
+- an unknown sex is more likely able to get euthanized than any other category
 
-### Stats Test 1: ANOVA Test: One Way
+Question 3- At what age are animals more likely to get euthanized ?
 
-Analysis of variance, or ANOVA, is a statistical method that separates observed variance data into different components to use for additional tests. 
+- to look at the visualization we can see that the majority of animals that are leading to be euthinized are animals that are one year old
+- the statistical test will show that the ages from the animals that are euthinized are not equal to the number of the animalsa are not euthinized 
 
-A one-way ANOVA is used for three or more groups of data, to gain information about the relationship between the dependent and independent variables: in this case our clusters vs. the log_error, respectively.
+Question 4 - Is there some sort of relationship between color and Euthinization 
 
-To run the ANOVA test in Python use the following import: \
-<span style="color:green">from</span> scipy.stats <span style="color:green">import</span> f_oneway
+- to look at the visualization we can see that the majority of animals that are leading to be euthinized are animals that are one year old
+- the statistical test will show that the ages from the animals that are euthinized are not equal to the number of the animalsa are not euthinized 
 
-- f_oneway, in this case, takes in the individual clusters and returns the f-statistic, f, and the p_value, p:
-    - the f-statistic is simply a ratio of two variances. 
-    - The p_vlaue is the probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
+Question 5 - Is there some relationship between color and Euthinization
 
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is
-- The alternate hypothesis (H<sub>1</sub>) is 
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-#### Results:
-
-
-#### Summary:
-
-
-### Stats Test 2: T-Test: One Sample, Two Tailed
-- A T-test allows me to compare a categorical and a continuous variable by comparing the mean of the continuous variable by subgroups based on the categorical variable
-- The t-test returns the t-statistic and the p-value:
-    - t-statistic: 
-        - Is the ratio of the departure of the estimated value of a parameter from its hypothesized value to its standard error. It is used in hypothesis testing via Student's t-test. 
-        - It is used in a t-test to determine if you should support or reject the null hypothesis
-        - t-statistic of 0 = H<sub>0</sub>
-    -  - the p-value:
-        - The probability of obtaining test results at least as extreme as the results actually observed, under the assumption that the null hypothesis is correct
-- We wanted to compare the individual clusters to the total population. 
-    - Cluster1 to the mean of ALL clusters
-    - Cluster2 to the mean of ALL clusters, etc.
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is 
-- The alternate hypothesis (H<sub>1</sub>) is 
-
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-
-#### Results:
-
-
-#### Summary:
-
+- from running the statistical test we can see that there is a relationship between animal type and Euthanasia
+ 
 ***
 
 ## <a name="model"></a>Modeling:
@@ -174,66 +164,70 @@ To run the ANOVA test in Python use the following import: \
 ### Baseline
     
 - Baseline Results: 
-    
+    93% accuracy 
 
 - Selected features to input into models:
-    - features = []
+    - features = [year_born,	year_released,	days_old,	animal_type_Bird,	animal_type_Cat,	animal_type_Dog,	animal_type_Livestock,	animal_type_Other,	sex_Intact Female,	sex_Intact Male,	sex_Neutered Male,	sex_Spayed Female,	sex_Unknown]
 
 ***
 
-### Models and R<sup>2</sup> Values:
+### Models and accuracy Values:
 - Will run the following classifiation models:
-
+  - Random forest
+  - KNN modeling
+  - Random forest
+  - Logistic Regression model
     
 
-- Other indicators of model performance with breif defiition and why it's important:
+- Other indicators of model performance with breif description and why it's important:
 
     
     
-#### Model 1: Linear Regression (OLS)
+#### Model 1: Decision Tree
 
 
 - Model 1 results:
 
+Decision Tree, max depth 3| train: 96% |Validate: 96%
+This is the best model, since all of my models worked with 96% accuracy this model gave me the fastest result and will be less costly to compute
 
-
-### Model 2 : Lasso Lars Model
-
+### Model 2 : Random forest
 
 - Model 2 results:
 
+max depth 3| train: 96% |Validate: 96%
 
-### Model 3 : Tweedie Regressor (GLM)
+### Model 3 : KNN modeling
 
-- Model 3 results:
+- Model 3 results: all measured with accuracy
+
+max depth 3| train: 96% |Validate: 96%
 
 
-### Model 4: Quadratic Regression Model
+### Model 4: Logistic Regression model
 
 - Model 4 results:
+at C= 0.05 | train: 96%
 
 
 ## Selecting the Best Model:
-
-### Use Table below as a template for all Modeling results for easy comparison:
-
-| Model | Validation/Out of Sample RMSE | R<sup>2</sup> Value |
-| ---- | ----| ---- |
-| Baseline | 0.167366 | 2.2204 x 10<sup>-16</sup> |
-| Linear Regression (OLS) | 0.166731 | 2.1433 x 10<sup>-3</sup> |  
-| Tweedie Regressor (GLM) | 0.155186 | 9.4673 x 10<sup>-4</sup>|  
-| Lasso Lars | 0.166731 | 2.2204 x 10<sup>-16</sup> |  
-| Quadratic Regression | 0.027786 | 2.4659 x 10<sup>-3</sup> |  
-
-
-- {} model performed the best
-
-
-## Testing the Model
-
-- Model Testing Results
+- all of the models used they where all around the same range in accuracy so `Decision tree` was the fastes and easiest to use so this idealy would be the best model 
 
 ***
 
 ## <a name="conclusion"></a>Conclusion:
 [[Back to top](#top)]
+
+In conclusion these models will help deternmin with 96% accuracy if the animal has certain characterisics that would lead to euthinization 
+
+- our goal from the start is to use classification models to detrmine predictions as to when a animal will be euthinized and how we can reduce that 
+
+
+### Recomendations
+
+- from the looks of the data animals that are not nutered or spayed are more likly to be euthinized, if there was a way we can workout the public the impotrance of nutering anmals and being spayed and how this will decrease euthinization and save our animals lives 
+
+- Having the City of Austin explain to the public the types of animals in they "put down" its not only cats and dogs and find ways to explain the actual numbers for the adoptible animals i.e the numbers of the animals cats and dogs that have been euthinized.
+
+- I think this dataset is amazing it had so much information on the animals, I just think, looking though this data there is alot I had to deep dive and look for and I think that the City of Austin should invest more time making the dataset more specific so that the public has a easier time reading the dataset 
+
