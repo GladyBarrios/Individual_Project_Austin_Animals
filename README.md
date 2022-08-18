@@ -234,16 +234,15 @@ at C= 0.05 | train: 96%
 
 In conclusion these models will help deternmin with 96% accuracy if the animal has certain characterisics that would lead to euthinization 
 
-- our goal from the start is to use classification models to detrmine predictions as to when a animal will be euthinized and how we can reduce that 
+- Our goal from the start is to use classification models to detrmine predictions as to when a animal will be euthinized and how we can reduce and prevent euthanization in the City of Austin and hopefully relay this information to other cities in Texas.
 
 
 ### Recomendations
 
-- from the looks of the data animals that are not nutered or spayed are more likly to be euthinized, if there was a way we can workout the public the impotrance of nutering anmals and being spayed and how this will decrease euthinization and save our animals lives 
+- From the looks of the data animals that are not nutered or spayed are more likely to be euthinized, if there was a way we can work with the public to enhance the impotrance of nutering and spayed animals, by enhancing that this will decrease euthinization and save our animals lives. 
 
-- Having the City of Austin explain to the public the types of animals in they "put down" its not only cats and dogs and find ways to explain the actual numbers for the adoptible animals i.e the numbers of the animals cats and dogs that have been euthinized.
+- Having the City of Austin explain to the public the types of animals they euthnized its not only cats and dogs. Its best to find ways to explain the actual numbers for the adoptible animals i.e the numbers of the animals cats and dogs that have been euthinized.
 
-- I think this dataset is amazing it had so much information on the animals, I just think, looking though this data there is alot I had to deep dive and look for and I think that the City of Austin should invest more time making the dataset more specific so that the public has a easier time reading the dataset 
-
+- This dataset is amazing it had so much information on the animals, I just think, looking through this data there is alot I had to deep dive and look for and I think that the City of Austin should invest more time making the dataset more specific so that the public has a easier time reading the dataset 
 Trelo Board
 https://trello.com/invite/b/DD9r7LOE/fe5e95000da537c76b36c0cbb1f6f14a/individual-project
