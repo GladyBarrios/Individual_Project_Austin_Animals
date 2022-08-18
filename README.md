@@ -1,6 +1,6 @@
 
 
-![Austin Animals](https://firehouseroundrock.com/client-logo/austin-animal-center/)
+![Austin Animals](7.jpeg)
 
 
 
@@ -35,7 +35,8 @@ ___
 [[Back to top](#top)]
 
 
-There are sevral diffrent attributes as to why our animals get euthanized, using this dataset from the City of Austin website we will explore the diffrent attributes and use our best model to predict weather an animals certain characteristics will lead them to be euthanized. The attributes we will be exploring are the animals, age, sex, type of animal and year the animal was released.***
+There are sevral diffrent attributes as to why our animals get euthanized, using this dataset from the City of Austin website we will explore the diffrent attributes and use our best model to predict weather an animals certain characteristics will lead them to be euthanized. This will not only help understand the qualifications of an animal to be put down, but find more ways to prevent euthinization. The attributes we will be exploring are the animals, age, sex, type of animal and year the animal was released.
+***
 
 
 ## <a name="planning"></a>Project Planning: 
@@ -231,3 +232,5 @@ In conclusion these models will help deternmin with 96% accuracy if the animal h
 
 - I think this dataset is amazing it had so much information on the animals, I just think, looking though this data there is alot I had to deep dive and look for and I think that the City of Austin should invest more time making the dataset more specific so that the public has a easier time reading the dataset 
 
+Trelo Board
+https://trello.com/invite/b/DD9r7LOE/fe5e95000da537c76b36c0cbb1f6f14a/individual-project
