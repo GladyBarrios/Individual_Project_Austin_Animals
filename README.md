@@ -46,7 +46,7 @@ The city of Austin is 90% "no kill" and being one of the largest no kill city in
 ### Executive Summary
 
 Using the City of Austin public databases by downloading a csv file,and prepareing the data by removing nulls and creating dummy variables.
-Now it is time for exploration, by asking my inital questions and creating visualizations along with statistical test to find the asnwers to my questions. For all of my questions I was able to find a relationship between the variables in question to euthinization. Moving on I used only my numeric variables for Modeling, only to show that all of my classification models came up with the same output, to determine the best model I chose the easiest and least complicated model Decision Tree.
+Now it is time for exploration, by asking my inital questions and creating visualizations along with statistical test to find the asnwers to my questions. For all of my questions I was able to find a relationship between the variables in question to euthinization. Moving on I used only my numeric variables for Modeling, only to show that all of my classification models came up with the same output, to determine the best model I chose the easiest and least complicated model Decision Tree at a 96% accuracy level for predicting euthanization.
 
 
 ***
